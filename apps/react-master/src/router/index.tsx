@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {lazy} from 'react'
 import { Outlet, RouteObject } from 'react-router-dom'
 
 export interface extraBizObject {
@@ -7,10 +7,14 @@ export interface extraBizObject {
 
 type ZHRouter = extraBizObject & RouteObject
 
+const Home = lazy(() => import('../pages/home'))
+const Hot = lazy(() => import('../pages/hot'))
+
+
 export const router: ZHRouter[] = [
   {
     path: '/',
-    element: <div>home</div>,
+    element: <Home />,
     title: '首页',
     children: [
       {
@@ -23,7 +27,7 @@ export const router: ZHRouter[] = [
       },
       {
         path: 'hot',
-        element: <div>热榜</div>,
+        element: <Hot/>,
       },
       {
         path: 'self',

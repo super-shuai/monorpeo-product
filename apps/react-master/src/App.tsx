@@ -1,14 +1,17 @@
 import React from 'react'
-
+import {Provider} from 'react-redux'
+import { store } from "@/store";
+import { BrowserRouter, useRoutes } from 'react-router-dom'
 import { router } from './router'
-import { HashRouter, useRoutes } from 'react-router-dom'
 
 const Routers = () => useRoutes(router)
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routers />
-    </HashRouter>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routers />
+      </Provider>
+    </BrowserRouter>
   )
 }

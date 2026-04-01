@@ -1,0 +1,45 @@
+.transition-default() {
+  &-enter-active,
+  &-leave-active {
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1) !important;
+  }
+
+  &-move {
+    transition: transform 0.4s;
+  }
+}
+
+.expand-transition {
+  .transition-default();
+}
+
+.expand-x-transition {
+  .transition-default();
+}
+
+
+// Text button 
+.btn-text {
+  color: #2d8cf0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  &.error {
+    color: #ed3f14;
+  }
+
+  &.success {
+    color: #19be6b;
+  }
+
+  &.warn {
+    color: #ff9900;
+  }
+}

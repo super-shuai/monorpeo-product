@@ -12,7 +12,7 @@ module.exports = function (isDev) {
       publicPath: '/'
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', 'json'],
+      extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', 'json'],
       alias: {
         '@': path.resolve(__dirname, '../src')
       },
